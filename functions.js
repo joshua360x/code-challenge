@@ -147,7 +147,12 @@ Output:
 */
 
 export function makeArrayOfArraysOfArrays(arr) {
-    return arr.map();
+    //  arr.map(el => {
+    //     return [
+    //         ['name', el.name],
+    //         ['type', el.type]
+    //     ];
+    // });
 }
 
 ////////////////////////////////////////////////////////
