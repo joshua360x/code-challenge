@@ -15,7 +15,7 @@ OUTPUT:
 */
 
 export function findByName(name, arr) {
-    return {};
+    return arr.find(el => el.name === name);
 }
 
 /*
@@ -27,7 +27,7 @@ OUTPUT:
 ]*/
 
 export function getDogs(arr) {
-    return [];
+    return arr.filter(el => el.type === 'dog');
 }
 
 /*
@@ -36,7 +36,8 @@ OUTPUT:
 */
 
 export function getNamesOfDogs(arr) {
-    return [];
+    const dogs = arr.filter(el => el.type === 'dog');
+    return dogs.map(el => el.name);
 }
 
 
@@ -47,7 +48,7 @@ Output:
 */
 
 export function makeArrayOfNames(arr) {
-    return [];
+    return arr.map(el => el.name);
 }
 
 /*
@@ -57,7 +58,7 @@ Output:
 */
 
 export function makeReversedArrayOfTypes(arr) {
-    return [];
+    return arr.map(el => el.type).reverse();
 }
 
 /*
@@ -72,9 +73,14 @@ Output:
 */
 
 export function makeSpanishLanguageArray(arr) {
-    return [];
-}
+    const span = arr.map(row => {
+        return {
+            nombre: row.name,
+            tipo: row.type
+        };});
 
+    return span;
+}
 /*
 Output:
 
@@ -86,7 +92,7 @@ Output:
 ]*/
 
 export function makeArrayWithIsHungry(arr) {
-    return [];
+    return arr.map(el => ({ ...el, isHungry : true }));
 }
 
 /*
@@ -100,7 +106,11 @@ Output:
 ]*/
 
 export function makeShoutingArray(arr) {
-    return [];
+   
+    const upperCase = arr.filter(el => el.name ? el.name.toUpperCase() : false);
+    // const upperCase1 = arr.map(el => el.name.toUpperCase());
+    // const uppertype = arr.map(el => el.type);
+    return upperCase;
 }
 
 
@@ -111,7 +121,7 @@ Output:
 */
 
 export function makeStringArray(arr) {
-    return [];
+
 }
 
 /*
@@ -137,7 +147,12 @@ Output:
 */
 
 export function makeArrayOfArraysOfArrays(arr) {
-    return [];
+    //  arr.map(el => {
+    //     return [
+    //         ['name', el.name],
+    //         ['type', el.type]
+    //     ];
+    // });
 }
 
 ////////////////////////////////////////////////////////
@@ -166,7 +181,7 @@ Output:
 */
 
 export function getCars(arr) {
-    return [];
+    return arr.filter(el => el.type === 'car');
 }
 
 /*
@@ -179,7 +194,9 @@ Output:
 */
 
 export function getChevyCars(arr) {
-    return [];
+    const cars = arr.filter(el => el.type === 'car');
+
+    return cars.filter(el => el.make === 'chevy');
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
